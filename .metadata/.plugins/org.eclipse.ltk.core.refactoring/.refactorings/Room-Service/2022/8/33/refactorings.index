@@ -1,0 +1,5 @@
+1660108130599	Rename type 'GlobalHandlerException'
+1660108281772	Rename type 'RoomsNotAvailableException'
+1660109610229	Rename type 'RoomsNotAvailable'
+1660109651253	Rename type 'RoomNotFoundWithId'
+1660109786626	Delete element

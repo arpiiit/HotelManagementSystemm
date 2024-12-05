@@ -1,0 +1,34 @@
+package com.receptionistservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.receptionistservice.entity.Receptionist;
+import com.receptionistservice.repository.ReceptionistRepository;
+
+@Service
+public class ReceptionistServiceImpl implements ReceptionistService {
+
+	@Autowired
+	private ReceptionistRepository receptionistRepository;
+	
+	@Autowired
+	private ReceptionistSequenceImpl sequence1;
+
+	@Override
+	public List<Receptionist> getAllReceptionists() {
+		// TODO Auto-generated method stub
+		return receptionistRepository.findAll();
+	}
+
+	@Override
+	public Receptionist addReceptionist(Receptionist receptionist) {
+		// TODO Auto-generated method stub
+		receptionist.setReceptionistId(sequence1.getSequenceNumber(Receptionist.SEQUENCE_NAME));
+		Receptionist receptionist1 = receptionistRepository.save(receptionist);
+		return receptionist1;
+	}
+
+}

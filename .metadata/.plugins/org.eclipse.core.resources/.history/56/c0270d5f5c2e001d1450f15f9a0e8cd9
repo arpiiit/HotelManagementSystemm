@@ -1,0 +1,5 @@
+package com.receptionistservice.entity;
+
+public class ReceptionistSequence {
+
+}

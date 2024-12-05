@@ -1,0 +1,5 @@
+package com.receptionistservice.service;
+
+public class ReceptionistSequenceImpl {
+
+}

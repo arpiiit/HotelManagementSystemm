@@ -1,0 +1,35 @@
+server:
+  port: 9000
+  
+spring:
+  application:
+    name: api-gateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: Owner-Service
+        uri: http://localhost:8080/
+        predicates:
+        - Path=/department/**
+      - id: MANAGER-SERVICE
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/staff/**
+        
+      - id: Receptionist-Service
+        uri: http://localhost:8083/
+        predicates:
+        - Path=/guest/**
+      - id: ROOM-SERVICE
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/room/**   
+      - id: INVENTORY-SERVICE
+        uri: http://localhost:8084/
+        predicates:
+        - Path=/inventory/**
+      - id: ROOM-SERVICE
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/staff/**
